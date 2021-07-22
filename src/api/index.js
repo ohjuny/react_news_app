@@ -56,3 +56,17 @@ export const addNewsletter = async (data) => {
         throw error;
     }
 }
+
+export const sendMessage = async (data) => {
+    try {
+        const response = await axios({
+            method: 'POST',
+            url: `${URL_SERV}/contact`,
+            data: data
+        })
+        return true
+    }
+    catch (error) {
+        return false
+    }
+}

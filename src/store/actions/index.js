@@ -3,7 +3,8 @@ import {
     GET_POST_BY_ID,
     CLEAR_POST_BY_ID,
     ADD_NEWSLETTER,
-    CLEAR_USER
+    CLEAR_USER,
+    SEND_MESSAGE
 } from '../types';
 import * as api from '../../api';
 
@@ -40,4 +41,9 @@ export const clearUser = () => ({
     payload: {
         newsletter: 'done'
     }
+})
+
+export const sendMessage = (data) => ({
+    type: SEND_MESSAGE,
+    payload: api.sendMessage(data)
 })
